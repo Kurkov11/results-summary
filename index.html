@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card-white">
+
+      <div class="card-violet">
+        <h3 class="result-text">Your Result</h3>
+        <div class="circle">
+          <h1 class="score">76</h1>
+          <p class="max">of 100</p>
+        </div>
+        <h2 class="word">Great</h2>
+        <p class="fun-fact">You scored higher than 65% of the people who have taken these tests.</p>
+      </div>
+
+      <div class="content">
+
+        <h3 class="summary-text">Summary</h3>
+      <section class="reaction">
+        <div class="r-text">
+          <img alt="red thunder" class="reaction-icon" id="reaction-icon">
+          <p id="name1"></p>
+        </div>
+        <div class="r-score">
+          <p><span id="r-score-span"></span> / 100</p>
+        </div>
+      </section>
+      <section class="memory">
+        <div class="m-text">
+          <img alt="yellow brain" class="memory-icon" id="memory-icon">
+          <p id="name2"></p>
+        </div>
+        <div class="m-score">
+          <p><span id="m-score-span"></span> / 100</p>
+        </div>
+      </section>
+      <section class="verbal">
+        <div class="ve-text">
+          <img alt="blue cloud" class="verbal-icon" id="verbal-icon">
+          <p id="name3"></p>
+        </div>
+        <div class="ve-score">
+          <p><span id="ve-score-span"></span> / 100</p>
+        </div>
+      </section>
+      <section class="visual">
+        <div class="vi-text">
+          <img alt="violet eye" class="visual-icon" id="visual-icon">
+          <p id="name4"></p>
+        </div>
+        <div class="vi-score">
+          <p><span id="vi-score-span"></span> / 100</p>
+        </div>
+      </section>
+
+      <a href="#"><button>Continue</button></a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  
+  <script>
+    let data = 
+    [
+      {
+        "category": "Reaction",
+        "score": 80,
+        "icon": "./assets/images/icon-reaction.svg"
+      },
+      {
+        "category": "Memory",
+        "score": 92,
+        "icon": "./assets/images/icon-memory.svg"
+      },
+      {
+        "category": "Verbal",
+        "score": 61,
+        "icon": "./assets/images/icon-verbal.svg"
+      },
+      {
+        "category": "Visual",
+        "score": 72,
+        "icon": "./assets/images/icon-visual.svg"
+      }
+    ]
+    console.log(data)
+    document.getElementById('reaction-icon').src = (data)[0].icon
+    document.getElementById('name1').innerHTML = (data)[0].category
+    document.getElementById('r-score-span').innerHTML = (data)[0].score
+
+    document.getElementById('memory-icon').src = (data)[1].icon
+    document.getElementById('name2').innerHTML = (data)[1].category
+    document.getElementById('m-score-span').innerHTML = (data)[1].score
+
+    document.getElementById('verbal-icon').src = (data)[2].icon
+    document.getElementById('name3').innerHTML = (data)[2].category
+    document.getElementById('ve-score-span').innerHTML = (data)[2].score
+
+    document.getElementById('visual-icon').src = (data)[3].icon
+    document.getElementById('name4').innerHTML = (data)[3].category
+    document.getElementById('vi-score-span').innerHTML = (data)[3].score
+  </script>
+</body>
+</html>
